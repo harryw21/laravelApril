@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','Form todo')
 @section('content')
-    <h2>Form User</h2>
+    <h2>Form Edit Todo</h2>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -13,20 +13,14 @@
     </div>
 @endif
 
-    {{Form::open(['url'=>'user'])}}
 
-@include('user.form')
-        
-
-
-</table>
-
-{{Form::Submit('Save User')}}
+{{ Form::model($todo,['url'=>'todo/'.$todo->id,'method'=>'put'])}}
+@include('todo.form')
+<br>
+<br>
+{{Form::submit('Update Todo')}}
 <br>
 {{link_to('/todo','Back')}}
-
-
-{{--</form>--}}
 
 {{ Form::close() }} 
 @endsection()

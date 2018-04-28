@@ -25,12 +25,17 @@ Route::get('/', function () {
 Route::get('todo','TodoController@index');
 Route::get('todo/create','TodoController@create');
 Route::post('todo','TodoController@store');
-Route::get('category','CategoryController@index');
+Route::get('todo/{id}/edit','TodoController@edit');
+Route::put('todo/{id}','TodoController@update');
+Route::delete('todo/{id}','TodoController@destroy');
 
+Route::get('category','CategoryController@index');
 Route::get('category/create','CategoryController@create');
 Route::post('category','CategoryController@store');
 
 Route::get('user/create','UserController@create');
 Route::get('user','UserController@index');
 Route::post('user','UserController@store');
-
+Route::get('user/{id}/edit','UserController@edit');
+Route::put('user/{id}','UserController@update');
+Route::delete('user/{id}','UserController@destroy');

@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','Form todo')
 @section('content')
-    <h2>Form Todo</h2>
+    <h2>Form Category</h2>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -16,12 +16,12 @@
     {{Form::open(['url'=>'category'])}}
 {{-- <form action="todo" method="POST"> --}}
 
-{{Form::text('category',null,['placeholder'=>'Todo Title'])}}
+{{Form::text('category',null,['placeholder'=>'Category'])}}
 <br>
 <br>
 
 
-{{Form::Submit('Save Todo')}}
+{{Form::Submit('Save Category')}}
 <br>
 {{link_to('/todo','Back')}}
 
